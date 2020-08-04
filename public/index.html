@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link type="text/css" href="static/css/styles.css">
+    <meta charset="UTF-8">
+    <title>Músicas</title>
+</head>
+<body>
+    <header>
+        <div class="container-pesquisa">
+            <label for="pesquisa">Pesquisa:</label>
+            <input id="pesquisa" type="text">
+            <button id="btnSearch" type="button">Buscar</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="container-resultado">
+            <div>
+                <ul id="lista"></ul>
+            </div>
+        </div>
+    </main>
+
+    <script type="module">
+        import search from "./static/js/api.js";
+
+        let btnSearch = document.getElementById('btnSearch');
+        btnSearch.addEventListener('click', evt => {
+          console.log('requisitando')
+          search();
+        });
+    </script>
+</body>
+</html>
